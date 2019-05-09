@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/opt/tg_hCaptcha_bot
+    environment:
+      - FLASK_APP=web/app.py
+    command: /usr/local/bin/flask run -h 0
+  bot:
+    build: .
+    volumes:
+      - .:/opt/tg_hCaptcha_bot
+    working_dir: /opt
+    command: python -m tg_hCaptcha_bot

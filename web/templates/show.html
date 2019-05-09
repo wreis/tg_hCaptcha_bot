@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <title>tghCaptchaBot</title>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+  </head>
+  <body>
+    <p>Hi {{ member_name }}! Please solve the captcha.</p>
+    <form id="hcaptcha-form" action="{{ '/' + '/'.join([chat_id, member_id, member_name, 'verify']) }}" method="POST">
+      <div class="h-captcha" data-sitekey="0da08e76-e3e9-49c4-9e2a-59bbab291c67"></div>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
